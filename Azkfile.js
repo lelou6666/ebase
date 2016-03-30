@@ -40,8 +40,8 @@ systems({
     scalable: {default: 1, limit: 1},
     http: {
       domains: [
-        "#{system.name}.#{env.HOST_DOMAIN}",
         "#{system.name}.#{azk.default_domain}",
+        "#{system.name}.#{env.HOST_DOMAIN}",
       ]
     },
     ports: {
