@@ -3,7 +3,7 @@
  */
 // Adds the systems that shape your system
 systems({
-  ebase: {
+  "ebase": {
     // Dependent systems
     depends: ["mysql"],
     // More images:  http://images.azk.io
@@ -19,7 +19,7 @@ systems({
       domains: [
         "#{env.HOST_DOMAIN}",
         "#{env.HOST_IP}",
-        "#{system.name}.#{azk.default_domain}"
+        "#{system.name}.#{azk.default_domain}",
       ]
     },
     ports: {
@@ -41,7 +41,7 @@ systems({
     http: {
       domains: [
         "#{system.name}.#{env.HOST_DOMAIN}",
-        "#{system.name}.#{azk.default_domain}"
+        "#{system.name}.#{azk.default_domain}",
       ]
     },
     ports: {
@@ -86,11 +86,11 @@ systems({
       "/azk/deploy/.config": persistent("deploy-config"),
     },
     scalable: {"default": 0, "limit": 0},
-  },
-  envs: {
-    // Adicione aqui as opções de configuração do deploy
-    BOX_SIZE: "512mb", //Capacidade do Droplet (512mb, 1gb, 2gb
-    BOX_NAME: "ebase", //Nome do droplet
+    envs: {
+      // Adicione aqui as opções de configuração do deploy
+      BOX_SIZE: "512mb", //Capacidade do Droplet (512mb, 1gb, 2gb
+      BOX_NAME: "ebase", //Nome do droplet
+    },
   },
 });
 
